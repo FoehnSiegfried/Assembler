@@ -32,7 +32,7 @@ private:
 
 public:
     HashTable();
-    HashTable(unsigned int size = 101, bool autoLoadFactor = true);
+    HashTable(unsigned int size, bool autoLoadFactor = true);
     ~HashTable();
     unsigned int getHashIndex(const K &key);
     void insert(const K &key, const V &value);

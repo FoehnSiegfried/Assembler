@@ -6,27 +6,6 @@
 #include "..\Lib\Map_Lib\Map.h"
 using namespace std;
 
-/*
-R
-inst rd rs1 rs2
-add x10 x11 x12
-I
-inst rd rs1 imm
-addi x10 x11 0
-S
-inst rs2 imm rs1
-sb x11 8 x10
-B
-inst rs1 rs2 imm
-bne x10 x11 8
-U
-inst rd imm
-lui x10 128
-J
-inst rd imm
-jal x10 128
-*/
-
 enum INST_FORMAT
 {
     TYPE_R,

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "./Assembler_RVX/RVXAssembler.h"
+#include "./RVX_Assembler_v1.1.0/RVX_Assembler.h"
 
 #define IM "E:/TSRepo/Assembler/im"
 
@@ -9,18 +9,14 @@ int dex(string input, string output);
 
 int main(int argc, char const *argv[])
 {
-    RVXAssembler rvasm;
+    RVX_Assembler rvasm("E:\\TSRepo\\Assembler\\cache\\");
     string input = argv[1];
     string output = argv[2];
-    int com = rvasm.Compile(input, output);
+    int com = rvasm.fileCompile_Word(input, output);
     switch (com)
     {
-    case SUCESS:
-        cout << "RISC-V ASM Compile Sucess !" << endl;
-        break;
-    case OPENERR:
-        cout << "FILE OPEN ERROR" << endl;
-        return -1;
+    case SUCCESS:
+        cout << "RISC-V ASM Compile Success !" << endl;
         break;
     default:
         cout << "ASM ERROR In Line :" << com << endl;

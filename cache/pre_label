@@ -1,4 +1,4 @@
-addi x10 x0   16  #lak
+addi x10 x0 16 
 addi x11 x0 32
 addi x12 x0 64
 add x13 x12 x11
