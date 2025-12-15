@@ -1,4 +1,4 @@
-addi x10 x0   16  #lak
+addi x10 x0 16
 addi x11 x0 32
 addi x12 x0 64
 add x13 x12 x11
@@ -10,4 +10,5 @@ bne x15 x16 8
 addi x30 x0 -1
 addi x31 x0 -1
 addi x1 x1 1
-jal x2 -4
+jal x2 start
+label start

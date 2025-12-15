@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
-#include "./RVX_Assembler_v1.1.0/RVX_Assembler.h"
+#include "./RVX_Assembler_v1.2.0/RVX_Assembler.h"
+using namespace std;
 
 #define IM "E:/TSRepo/Assembler/im"
 
@@ -9,13 +10,15 @@ int dex(string input, string output);
 
 int main(int argc, char const *argv[])
 {
-    RVX_Assembler rvasm("E:\\TSRepo\\Assembler\\cache\\");
+    RVX_Assembler rvasm;
+    cout << "RISC-V ASM Assembler v1.2.0" << endl;
     string input = argv[1];
     string output = argv[2];
-    int com = rvasm.fileCompile_Word(input, output);
+    int com = rvasm.replaceLabels(input, output);
+    cout << "Generating IM file..." << endl;
     switch (com)
     {
-    case SUCCESS:
+    case 0:
         cout << "RISC-V ASM Compile Success !" << endl;
         break;
     default:
@@ -23,7 +26,7 @@ int main(int argc, char const *argv[])
         return -1;
         break;
     }
-    dex(output, IM);
+    // dex(output, IM);
     return 0;
 }
 

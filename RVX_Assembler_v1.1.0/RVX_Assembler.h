@@ -12,28 +12,29 @@
 #include "RVX_Info.h"
 using namespace std;
 
-#define SUCCESS 0   // success
+#define SUCCESS 0 // success
 
 class RVX_Assembler
 {
 private:
     string *splitLine(const string &line);
-    HashTable<string, int>* collectLabels(const string &inputFile);
+    HashTable<string, int> *collectLabels(const string &inputFile);
     bool verifyLine(string *vals);
     int preprocessLabel(const string &inputFile, const string &outputFile);
 
     uint32_t RV32I(string *inst);
     string cache;
+
 public:
     RVX_Assembler(const string &cache);
     ~RVX_Assembler();
 
-    uint32_t lineCompile(const string &line);//编译一行指令
-    int fileCompile(const string &inputFile, const string &outputFile);//编译文件
-    int fileCompile_Word(const string &inputFile, const string &outputFile);//编译文件
+    uint32_t lineCompile(const string &line);                                // 编译一行指令
+    int fileCompile(const string &inputFile, const string &outputFile);      // 编译文件
+    int fileCompile_Word(const string &inputFile, const string &outputFile); // 编译文件
 
-    int verify(const string &inputFile);//验证
-    int preprocessing(const string &inputFile, const string &outputFile);//预处理
+    int verify(const string &inputFile);                                  // 验证
+    int preprocessing(const string &inputFile, const string &outputFile); // 预处理
 };
 
 #include "RA_RV32I.cpp"
