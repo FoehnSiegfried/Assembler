@@ -11,11 +11,10 @@ int dex(string input, string output);
 int main(int argc, char const *argv[])
 {
     RVX_Assembler rvasm;
-    cout << "RISC-V ASM Assembler v1.2.0" << endl;
+    cout << "RVX_ASSEMBLER_VERSION : " << RVX_ASSEMBLER_VERSION << endl;
     string input = argv[1];
     string output = argv[2];
     int com = rvasm.replaceLabels(input, output);
-    cout << "Generating IM file..." << endl;
     switch (com)
     {
     case 0:

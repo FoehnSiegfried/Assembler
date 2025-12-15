@@ -12,6 +12,8 @@
 #include "RVX_Info.h"
 using namespace std;
 
+#define RVX_ASSEMBLER_VERSION "1.2.0"
+
 class RVX_Assembler
 {
 private:
