@@ -4,7 +4,6 @@
 #include <stdint.h>
 #include <string>
 #include <fstream>
-#include <string>
 #include <iomanip>
 #include "..\Lib\Map_Lib\Map.h"
 #include "..\Lib\Hash_Lib\HashTable.h"
@@ -26,6 +25,7 @@ private:
 
     //验证一行
     bool verifyInst();
+    //给当前指令装填label，没有则不做操作（因此一般强制使用）
     void loadLabels(int instAddr);
 
 private:

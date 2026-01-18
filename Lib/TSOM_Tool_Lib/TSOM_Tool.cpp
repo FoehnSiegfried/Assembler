@@ -1,7 +1,7 @@
-#ifndef _TOOL_CPP_
-#define _TOOL_CPP_
+#ifndef _TSOM_TOOL_CPP_
+#define _TSOM_TOOL_CPP_
 
-#include "Tool.h"
+#include "TSOM_Tool.h"
 
 bool isSignedInteger(const string &str)
 {
@@ -24,4 +24,4 @@ bool isSignedInteger(const string &str)
     return true;
 }
 
-#endif // _TOOL_CPP_
+#endif // _TSOM_TOOL_CPP_
