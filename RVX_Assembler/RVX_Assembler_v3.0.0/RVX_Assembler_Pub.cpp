@@ -3,6 +3,10 @@
 
 #include "RVX_Assembler.h"
 
+RVX_Assembler::RVX_Assembler(string &val_temp){
+    temp = val_temp;
+}
+
 int RVX_Assembler::loadLabel(string &val_input, string &val_output)
 {
     ifstream inputStream;
@@ -72,7 +76,7 @@ int RVX_Assembler::loadLabel(string &val_input, string &val_output)
 
 int RVX_Assembler::verify(string &val_input)
 {
-    string temp_label = RVX_TEMP_LABEL;
+    string temp_label = temp+RVX_TEMP_LABEL;
     int loadLabelInfo = loadLabel(val_input, temp_label);
     if (loadLabelInfo != CONFIRM)
         return loadLabelInfo;
@@ -121,7 +125,7 @@ int RVX_Assembler::compile(string &val_input, string &val_output)
     if (verifyInfo != CONFIRM)
         return verifyInfo;
 
-    string temp_label = RVX_TEMP_LABEL;
+    string temp_label = temp+RVX_TEMP_LABEL;
     ifstream inputStream;
     ofstream outputStream;
     inputStream.open(temp_label, ios::in);

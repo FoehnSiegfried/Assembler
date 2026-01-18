@@ -4,6 +4,8 @@
 #include "./RVX_Assembler\RVX_Assembler_v3.0.0\RVX_Assembler.h"
 using namespace std;
 
+#define TEMP_MK "E:/TSRepo/Assembler/Temp"
+
 #define IM "E:/TSRepo/Assembler/im"
 
 int im(string input, string output);
@@ -12,7 +14,8 @@ int real_dex(string input, string output);
 
 int main(int argc, char const *argv[])
 {
-    RVX_Assembler rvasm;
+    string temp = TEMP_MK;
+    RVX_Assembler rvasm(temp);
     cout << "RVX_ASSEMBLER_VERSION : " << RVX_ASSEMBLER_VERSION << endl;
     string input = argv[1];
     string output = argv[2];

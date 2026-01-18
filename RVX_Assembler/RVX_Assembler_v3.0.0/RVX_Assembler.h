@@ -16,7 +16,7 @@ using namespace std;
 
 #define RVX_ASSEMBLER_VERSION "3.0.0"
 
-#define RVX_TEMP_LABEL "E:/TSRepo/Assembler/Temp/temp_loadLabel"
+#define RVX_TEMP_LABEL "/temp_loadLabel"
 #define RVX_INSTVOLUME 16
 
 #define ASM_INST_LABEL ".label"
@@ -43,6 +43,8 @@ static Map<string, AsmInst_Info> AIMap = {
 class RVX_Assembler
 {
 private:
+    string temp;
+
     RealInst ri;
     PseudoInst pi;
 
@@ -52,6 +54,8 @@ private:
 
     int searchKeyWord(string &val_keyWord);
 public:
+    RVX_Assembler(string &val_temp);
+
     int loadLabel(string &val_input, string &val_output);
     int verify(string &val_input);
     int compile(string &val_input, string &val_output);
